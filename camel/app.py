@@ -1,10 +1,10 @@
 import streamlit as st
 from typing import List      
 import os
-# from dotenv import load_dotenv
-# load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
-# os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API")
+os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API")
 
 
 
