@@ -14,13 +14,13 @@ pinecone.init(
     api_key=os.getenv("PINECONE_API_KEY"),
     environment=os.getenv("PINECONE_ENVIRONMENT"),
 )
-INDEX_NAME = "langchain-docs-index"
+
 
 def run_llm(query: str, chat_history: List[Dict[str, Any]] = []):
     embeddings = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
     docsearch = Pinecone.from_existing_index(
         embedding=embeddings,
-        index_name=INDEX_NAME,
+        index_name="donkey-betz",
     )
     chat = ChatOpenAI(
         verbose=True,

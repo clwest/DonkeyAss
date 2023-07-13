@@ -14,11 +14,11 @@ pinecone.init(
     api_key=os.getenv("PINECONE_API_KEY"),
     environment=os.getenv("PINECONE_ENVIRONMENT"),
 )
-INDEX_NAME = "langchain-docs-index"
+INDEX_NAME = "donkey-betz"
 
 
 def ingest_docs():
-  loader = ReadTheDocsLoader(path="langchain-docs", features='html.parser') 
+  loader = ReadTheDocsLoader(path="coding-docs", features='html.parser') 
   raw_doc = loader.load()
   text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100, separators=["\n\n", "\n", " ", ""])
   documents = text_splitter.split_documents(documents=raw_doc)
